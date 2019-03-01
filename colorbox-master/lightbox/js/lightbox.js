@@ -1,6 +1,6 @@
 /*!
- * ColorBox est une maintenance du code original de 
- * Lightbox v2.10.0 par Lokesh Dhakar
+ * Lightbox v2.10.0
+ * by Lokesh Dhakar
  *
  * More info:
  * http://lokeshdhakar.com/projects/lightbox2/
@@ -43,15 +43,15 @@
   Lightbox.defaults = {
     albumLabel: 'Image %1 of %2',
     alwaysShowNavOnTouchDevices: false,
-    fadeDuration: 300,
+    fadeDuration: 600,
     fitImagesInViewport: true,
-    imageFadeDuration: 300,
+    imageFadeDuration: 600,
     // maxWidth: 800,
     // maxHeight: 600,
-    positionFromTop: 5,
-    resizeDuration: 300,
+    positionFromTop: 50,
+    resizeDuration: 700,
     showImageNumberLabel: true,
-    wrapAround: true,
+    wrapAround: false,
     disableScrolling: false,
     /*
     Sanitize Title
@@ -123,12 +123,6 @@
       left: parseInt(this.$image.css('border-left-width'), 10)
     };
 
-  // DEBUT - Maintenance par Téo BRYER le 01/03/2019
-  this.$outerContainer.css('border-radius',40);
-  this.$container.css('border-radius',40);
-  this.$image .css('border-radius',40);
-  // FIN - Maintenance
-  
     // Attach event handlers to the newly minted DOM elements
     this.$overlay.hide().on('click', function() {
       self.end();

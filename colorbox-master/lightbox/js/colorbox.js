@@ -57,7 +57,6 @@
     Sanitize Title
     If the caption data is trusted, for example you are hardcoding it in, then leave this to false.
     This will free you to add html tags, such as links, in the caption.
-
     If the caption data is user submitted or from some other untrusted source, then set this to true
     to prevent xss and other injection attacks.
      */
@@ -124,6 +123,12 @@
       left: parseInt(this.$image.css('border-left-width'), 10)
     };
 
+  // DEBUT - Maintenance par Nadine Giasson St-Amand - 1er mars 2019
+  this.$outerContainer.css('border-radius',40);
+  this.$container.css('border-radius',40);
+  this.$image .css('border-radius',40);
+  // FIN - Maintenance par Nadine Giasson St-Amand - 1er mars 2019
+  
     // Attach event handlers to the newly minted DOM elements
     this.$overlay.hide().on('click', function() {
       self.end();
@@ -164,11 +169,9 @@
 
     /*
       Show context menu for image on right-click
-
       There is a div containing the navigation that spans the entire image and lives above of it. If
       you right-click, you are right clicking this div and not the image. This prevents users from
       saving the image or using other context menu actions with the image.
-
       To fix this, when we detect the right mouse button is pressed down, but not yet clicked, we
       set pointer-events to none on the nav div. This is so that the upcoming right-click event on
       the next mouseup will bubble down to the image. Once the right-click/contextmenu event occurs
